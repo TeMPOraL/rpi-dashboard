@@ -1,0 +1,4 @@
+#+title: RPI Dashboard
+#+startup: hidestars
+
+Playing around with RPI.
