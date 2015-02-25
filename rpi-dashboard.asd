@@ -9,5 +9,11 @@
                #:restas
                #:local-time)
 
-  :components ((:file "package")
+  :components ((:file "defmodule")
+               (:file "routes")
+
+               (:module "sensors"
+                        :components ((:file "routes")
+                                     (:file "temperature")))
+               
                (:file "main")))

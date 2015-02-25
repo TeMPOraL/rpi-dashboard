@@ -1,3 +1,4 @@
 (in-package #:rpi-dashboard)
 
-(format t "HELLO!")
+(defun start ()
+  (restas:start '#:rpi-dashboard :port 8192))

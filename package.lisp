@@ -1,3 +1,1 @@
-(defpackage #:rpi-dashboard
-  (:use #:cl
-        #:alexandria))
+;;; Per restas convention, everything is moved to defmodule.lisp.
