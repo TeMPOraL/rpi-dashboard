@@ -4,6 +4,10 @@
   :serial t
   :description "Some fooling around with Raspberry Pi 2."
   :author "Jacek TeMPOraL Złydach"
-  :depends-on (#:alexandria)
+  :depends-on (#:alexandria
+               #:cl-json
+               #:restas
+               #:local-time)
 
-  :components ((:file "main")))
+  :components ((:file "package")
+               (:file "main")))
