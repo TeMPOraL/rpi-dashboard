@@ -1,4 +1,5 @@
 #+title: RPI Dashboard
 #+startup: hidestars
 
-Playing around with RPI.
+Playing around with Raspberry Pi 2.
+
