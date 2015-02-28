@@ -6,6 +6,7 @@
   :author "Jacek TeMPOraL Złydach"
   :depends-on (#:alexandria
                #:cl-json
+               #:cl-who
                #:restas
                #:local-time)
 

@@ -4,4 +4,12 @@
   (:url "sensors"))
 
 (restas:define-route route-main ("")
-  "hullo!")
+  (who:with-html-output-to-string (out)
+    (:html
+     (:head
+      (:title "Raspberry Pi 2 Dashboard"))
+
+     (:body
+      (:h1 "Welcome to TRC's Raspberry Pi 2 Dashboard!")
+      (:p (who:fmt "Current SOC temperature: ~A°C." (/ (float (rpd-sensors::get-current-temperature))
+                                                    1000)))))))
