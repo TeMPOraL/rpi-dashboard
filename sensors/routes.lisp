@@ -5,3 +5,6 @@
 
 (restas:define-route route-temperature-external ("external-temperature")
   (list (read-DS18B20-temperature)))
+
+(restas:define-route route-temperature-external ("uptime")
+  (list (get-uptime-string)))

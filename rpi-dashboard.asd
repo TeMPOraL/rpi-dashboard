@@ -16,5 +16,6 @@
                (:module "sensors"
                         :components ((:file "routes")
                                      (:file "DS18B20")
-                                     (:file "temperature")))
+                                     (:file "temperature")
+                                     (:file "system")))
                (:file "main")))
