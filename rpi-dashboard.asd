@@ -8,7 +8,8 @@
                #:cl-json
                #:cl-who
                #:restas
-               #:local-time)
+               #:local-time
+               #:external-program)
 
   :components ((:file "defmodule")
                (:file "routes")
