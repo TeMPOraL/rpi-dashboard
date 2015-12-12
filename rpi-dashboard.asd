@@ -9,14 +9,20 @@
                #:cl-who
                #:restas
                #:local-time
-               #:external-program)
+               #:external-program
+               #:clsql
+               #:clsql-sqlite3)
 
   :components ((:file "defmodule")
                (:file "routes")
+
+               (:module "persistence"
+                        :components ((:file "persistence")))
 
                (:module "sensors"
                         :components ((:file "routes")
                                      (:file "DS18B20")
                                      (:file "temperature")
-                                     (:file "system")))
+                                     (:file "system")
+                                     (:file "remote")))
                (:file "main")))

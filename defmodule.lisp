@@ -10,3 +10,11 @@
 
   (:render-method #'json:encode-json-to-string))
 
+(defpackage #:rpi-dashboard.persistence
+  (:use #:cl
+        #:alexandria)
+  (:nicknames #:rpd-persistence)
+
+  (:export #:initialize-store
+           #:persist-sensor-value))
+

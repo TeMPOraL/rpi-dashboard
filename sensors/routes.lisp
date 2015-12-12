@@ -9,5 +9,9 @@
 (restas:define-route route-temperature-external ("uptime")
   (list (get-uptime-string)))
 
-(restas:define-route route-remote-store-value ("remote-value" :method :post)
-  nil)
+(restas:define-route route-remote-store-value ("remote-value/:id" :method :post)
+  (store-remote-value id (hunchentoot:post-parameter "value")))
+
+(restas:define-route route-remote-register-sensor ("remote-sensor" :method :post)
+  nil                                   ;TODO register remote sensor
+  )
