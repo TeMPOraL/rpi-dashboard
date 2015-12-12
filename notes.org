@@ -1,0 +1,50 @@
+#+title: Notes.
+#+startup: hidestars
+
+* API design
+
+** Remote sensors
+*** Registering sensors
+    Data that I need, for each sensor on board.
+
+    - connected sensor model (e.g. DHT11, DS18B20, etc.)
+    - sensor value description
+      - unit
+      - precision (+/-)
+        - absolute or relative (i.e. +/- 2 units, or +/- 5%)
+      - resolution (smallest measurable delta)
+
+    This should be paired with IP and hardware board ID.
+
+*** Sending remote data
+    - (sensor-id reading-value)
+
+** Fetching data
+
+
+* Storage
+
+** Sensor description
+   - sensor id
+   - sensor UUID
+   - sensor name (string)
+   - sensor unit (string?)
+   - sensor precision
+   - sensor resolution
+   - sensor tags
+
+   Maybe in the future I'd like to have this data to be update-proof; i.e. if I upgrade to a better sensor
+   (lower error bars), I'd like to see the precision/resolution updated from that time.
+
+   So maybe let's have two IDs. One unique for the physical sensor (e.g. this particular DHT11), one for logical sensor (TEMP_1_BOARDX).
+   Client logic for logical sensor will join them accordingly.
+
+   So remote sensors will pass in a LOGICAL sensor name (i.e. TEMP_1_BOARDX) when logging data, while passing a PHYSICAL and a LOGICAL sensor
+   name when registering sensors and providing their properties (on startup).
+
+   Therefore we'll always have the required data.
+
+** Sensor log
+   - sensor id
+   - sensor value
+   - server timestamp

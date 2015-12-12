@@ -8,3 +8,6 @@
 
 (restas:define-route route-temperature-external ("uptime")
   (list (get-uptime-string)))
+
+(restas:define-route route-remote-store-value ("remote-value" :method :post)
+  nil)
